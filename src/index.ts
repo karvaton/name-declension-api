@@ -10,7 +10,7 @@ app.get('/ingenitive', async (req: Request, res: Response) => {
     const patronymicName = req.query.patronymicName as string;
     const familyName = req.query.familyName as string;
     // console.log(name);
-    const nameInVocative = await declention.inAccusative(givenName, patronymicName, familyName);
+    const nameInVocative = await declention.inGenitive(givenName, patronymicName, familyName);
     res.send(nameInVocative);
 });
 
@@ -20,6 +20,15 @@ app.get('/indative', async (req: Request, res: Response) => {
     const familyName = req.query.familyName as string;
     // console.log(name);
     const nameInVocative = await declention.inDative(givenName, patronymicName, familyName);
+    res.send(nameInVocative);
+});
+
+app.get('/inaccusative', async (req: Request, res: Response) => {
+    const givenName = req.query.givenName as string;
+    const patronymicName = req.query.patronymicName as string;
+    const familyName = req.query.familyName as string;
+    // console.log(name);
+    const nameInVocative = await declention.inAccusative(givenName, patronymicName, familyName);
     res.send(nameInVocative);
 });
 
