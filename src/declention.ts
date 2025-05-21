@@ -1,6 +1,6 @@
 import shevchenko, { GrammaticalGender } from 'shevchenko';
 
-async function inGenitive(givenName: string, patronymicName: string, familyName: string) {
+async function inAccusative(givenName: string, patronymicName: string, familyName: string) {
     const input = {
         gender: GrammaticalGender.MASCULINE,
         givenName, //: 'Тарас',
@@ -8,7 +8,7 @@ async function inGenitive(givenName: string, patronymicName: string, familyName:
         familyName, //: 'Шевченко'
     };
 
-    return await shevchenko.inGenitive(input);
+    return await shevchenko.inAccusative(input);
 }
 
 async function inDative(givenName: string, patronymicName: string, familyName: string) {
@@ -23,6 +23,6 @@ async function inDative(givenName: string, patronymicName: string, familyName: s
 }
 
 export default {
-    inGenitive,
+    inAccusative,
     inDative,
 };
